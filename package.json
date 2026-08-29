@@ -21,6 +21,7 @@
     "ci": "npm run lint && npm run format:check && npm run typecheck && npm test"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "next": "16.3.3",
     "next-intl": "^4.14.1",
     "react": "19.2.8",

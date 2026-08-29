@@ -10,6 +10,7 @@ import { site } from "@/content/site";
 import { personJsonLd, siteOrigin } from "@/lib/seo";
 import type { Locale } from "@/content/works";
 import "../globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
@@ -68,6 +69,7 @@ export default async function RootLayout({
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
