@@ -45,6 +45,7 @@ Editorial data lives in TypeScript, not a CMS:
 | `src/content/resume.ts`                 | CV sections, skills, software     |
 | `messages/en.json` / `messages/tr.json` | UI strings                        |
 | `public/works/`                         | Artwork files                     |
+| `public/videos/`                        | Optimized MP4s and posters        |
 | `public/cv/`                            | Downloadable resume PDF           |
 
 ## Routes
@@ -52,6 +53,7 @@ Editorial data lives in TypeScript, not a CMS:
 | Path           | Page                |
 | -------------- | ------------------- |
 | `/`            | About               |
+| `/animation`   | Animation films     |
 | `/portfolio`   | All selected works  |
 | `/cv`          | CV                  |
 | `/work/[slug]` | Work detail         |

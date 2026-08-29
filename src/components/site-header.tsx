@@ -6,8 +6,8 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { site } from "@/content/site";
 
 const links = [
-  { href: "/", key: "about" as const },
   { href: "/portfolio", key: "portfolio" as const },
+  { href: "/animation", key: "animation" as const },
   { href: "/cv", key: "cv" as const },
 ];
 
@@ -29,8 +29,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line bg-canvas">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
         <Link href="/" className="min-w-0" onClick={() => setOpen(false)}>
-          <div className="text-[15px] font-semibold tracking-[0.18em] uppercase">
-            {site.name}
+          <div className="text-[15px] font-semibold tracking-[0.06em]">
+            {site.mark}
           </div>
           <div className="hidden text-[11px] tracking-[0.12em] text-muted sm:block">
             {subtitle}

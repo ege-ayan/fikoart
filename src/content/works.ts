@@ -2,12 +2,23 @@ export type Locale = "en" | "tr";
 export type Localized = Record<Locale, string>;
 export type WorkCategory = "animation" | "illustration";
 
+export type WorkVideo = {
+  src: string;
+  poster: string;
+  width: number;
+  height: number;
+  loop?: boolean;
+  muted?: boolean;
+  label?: Localized;
+};
+
 export type Work = {
   slug: string;
   category: WorkCategory;
   year: string;
   cover: string;
   images: string[];
+  videos?: WorkVideo[];
   title: Localized;
   subtitle: Localized;
   description: Localized;
@@ -15,11 +26,47 @@ export type Work = {
 
 export const works: Work[] = [
   {
+    slug: "reel",
+    category: "animation",
+    year: "2025",
+    cover: "/videos/reel/poster.jpg",
+    images: [],
+    videos: [
+      {
+        src: "/videos/reel/reel.mp4",
+        poster: "/videos/reel/poster.jpg",
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    title: {
+      en: "2025 Animation Reel",
+      tr: "2025 Animasyon Reeli",
+    },
+    subtitle: {
+      en: "Selected animation",
+      tr: "Seçilmiş animasyon",
+    },
+    description: {
+      en: "A reel of recent 2D animation, character work, and commissioned pieces.",
+      tr: "Güncel 2D animasyon, karakter işleri ve komisyonlardan bir reel.",
+    },
+  },
+  {
     slug: "bubbles",
     category: "animation",
     year: "2025",
     cover: "/works/bubbles.jpeg",
     images: ["/works/bubbles.jpeg", "/works/bubble-merge.gif"],
+    videos: [
+      {
+        src: "/videos/bubbles/bubbles.mp4",
+        poster: "/videos/bubbles/poster.jpg",
+        width: 1080,
+        height: 1080,
+        loop: true,
+      },
+    ],
     title: {
       en: "Comes and Goes (Bubbles)",
       tr: "Comes and Goes (Bubbles)",
@@ -43,6 +90,23 @@ export const works: Work[] = [
       "/works/beesider-intro.gif",
       "/works/beesider-starnose.gif",
     ],
+    videos: [
+      {
+        src: "/videos/beesider/beesider.mp4",
+        poster: "/videos/beesider/poster.jpg",
+        width: 1620,
+        height: 1080,
+        loop: true,
+      },
+      {
+        src: "/videos/beesider/milana.mp4",
+        poster: "/videos/beesider/milana-poster.jpg",
+        width: 1920,
+        height: 1072,
+        loop: true,
+        label: { en: "Milana", tr: "Milana" },
+      },
+    ],
     title: {
       en: "Beesider",
       tr: "Beesider",
@@ -62,6 +126,22 @@ export const works: Work[] = [
     year: "2023–2024",
     cover: "/works/strike-cover.jpeg",
     images: ["/works/strike-cover.jpeg"],
+    videos: [
+      {
+        src: "/videos/strike/strike-1.mp4",
+        poster: "/videos/strike/strike-1-poster.jpg",
+        width: 1920,
+        height: 1080,
+        muted: true,
+      },
+      {
+        src: "/videos/strike/strike-2.mp4",
+        poster: "/videos/strike/strike-2-poster.jpg",
+        width: 1920,
+        height: 1080,
+        muted: true,
+      },
+    ],
     title: {
       en: "Strike!",
       tr: "Strike!",
@@ -81,6 +161,14 @@ export const works: Work[] = [
     year: "2024",
     cover: "/works/obsa.jpeg",
     images: ["/works/obsa.jpeg"],
+    videos: [
+      {
+        src: "/videos/obsa/obsa.mp4",
+        poster: "/videos/obsa/poster.jpg",
+        width: 1920,
+        height: 1080,
+      },
+    ],
     title: {
       en: "Obsa",
       tr: "Obsa",
@@ -100,6 +188,15 @@ export const works: Work[] = [
     year: "2023",
     cover: "/works/blob.gif",
     images: ["/works/blob.gif", "/works/blob-rotoscope.gif"],
+    videos: [
+      {
+        src: "/videos/blob/blob.mp4",
+        poster: "/videos/blob/poster.jpg",
+        width: 1920,
+        height: 1080,
+        loop: true,
+      },
+    ],
     title: {
       en: "Blob",
       tr: "Blob",
@@ -211,4 +308,12 @@ export function getWorksByCategory(category: WorkCategory) {
 
 export function getWork(slug: string) {
   return works.find((work) => work.slug === slug);
+}
+
+export function workVideos(work: Work) {
+  return work.videos ?? [];
+}
+
+export function workPosterSrcs(work: Work) {
+  return workVideos(work).map((video) => video.poster);
 }

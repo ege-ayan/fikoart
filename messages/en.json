@@ -2,13 +2,15 @@
   "Meta": {
     "homeTitle": "Fikoart — 2D Animation & Illustration",
     "portfolioTitle": "Portfolio",
+    "animationTitle": "Animation",
     "cvTitle": "CV",
     "description": "Fikret Insel is a 2D animator and illustrator from Ankara, Türkiye — portfolio, CV, and selected works.",
     "portfolioDescription": "Selected 2D animation, illustration, painting, and drawing by Fikret Insel.",
+    "animationDescription": "Selected 2D animation by Fikret Insel: reel, shorts, and commissioned films.",
     "cvDescription": "CV of Fikret Insel: productions, experience, education, and exhibitions."
   },
   "Nav": {
-    "about": "About",
+    "animation": "Animation",
     "portfolio": "Portfolio",
     "cv": "CV",
     "openMenu": "Open menu",

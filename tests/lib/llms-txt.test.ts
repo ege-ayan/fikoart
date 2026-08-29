@@ -12,6 +12,7 @@ describe("llmsTxt", () => {
     expect(text).toContain(`# ${site.name}`);
     expect(text).toContain(site.fullName);
     expect(text).toContain(site.email);
+    expect(text).toContain(absoluteUrl("/animation"));
     expect(text).toContain(absoluteUrl("/portfolio"));
     expect(text).toContain(absoluteUrl("/tr/cv"));
 

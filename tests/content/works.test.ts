@@ -3,7 +3,12 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { getWork, getWorksByCategory, works } from "@/content/works";
+import {
+  getWork,
+  getWorksByCategory,
+  workVideos,
+  works,
+} from "@/content/works";
 
 const publicDir = path.resolve(process.cwd(), "public");
 
@@ -13,14 +18,36 @@ describe("works", () => {
     expect(slugs).toEqual([...new Set(slugs)]);
   });
 
-  it("keeps local artwork files in public/", () => {
+  it("keeps local artwork and video files in public/", () => {
     for (const work of works) {
       for (const src of [work.cover, ...work.images]) {
         expect(existsSync(path.join(publicDir, src.replace(/^\//, "")))).toBe(
           true,
         );
       }
+
+      for (const video of workVideos(work)) {
+        expect(
+          existsSync(path.join(publicDir, video.src.replace(/^\//, ""))),
+        ).toBe(true);
+        expect(
+          existsSync(path.join(publicDir, video.poster.replace(/^\//, ""))),
+        ).toBe(true);
+        expect(video.width).toBeGreaterThan(0);
+        expect(video.height).toBeGreaterThan(0);
+      }
     }
+  });
+
+  it("includes the homepage animation videos", () => {
+    expect(workVideos(getWork("reel")!).map((video) => video.src)).toEqual([
+      "/videos/reel/reel.mp4",
+    ]);
+    expect(workVideos(getWork("bubbles")!).length).toBe(1);
+    expect(workVideos(getWork("beesider")!).length).toBe(2);
+    expect(workVideos(getWork("strike")!).length).toBe(2);
+    expect(workVideos(getWork("obsa")!).length).toBe(1);
+    expect(workVideos(getWork("blob")!).length).toBe(1);
   });
 
   it("splits animation and illustration catalogs", () => {

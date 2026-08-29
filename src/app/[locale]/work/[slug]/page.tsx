@@ -4,7 +4,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ImageReadyGate } from "@/components/image-ready-gate";
 import { MediaImage } from "@/components/media-image";
-import { getWork, works } from "@/content/works";
+import { WorkVideos } from "@/components/work-videos";
+import { getWork, workPosterSrcs, works } from "@/content/works";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -45,10 +46,10 @@ export default async function WorkPage({
   }
 
   return (
-    <ImageReadyGate srcs={work.images}>
+    <ImageReadyGate srcs={[...workPosterSrcs(work), ...work.images]}>
       <article className="mx-auto max-w-4xl px-5 py-10">
         <Link
-          href="/portfolio"
+          href={work.category === "animation" ? "/animation" : "/portfolio"}
           className="text-[12px] tracking-[0.14em] uppercase text-muted hover:text-ink"
         >
           ← {t("back")}
@@ -63,13 +64,14 @@ export default async function WorkPage({
           </p>
         </header>
         <div className="space-y-2">
+          <WorkVideos work={work} locale={locale} priorityFirst />
           {work.images.map((src, index) => (
             <MediaImage
               key={src}
               src={src}
               alt={work.title[locale]}
               sizes="(max-width: 896px) 100vw, 896px"
-              priority={index === 0}
+              priority={index === 0 && workPosterSrcs(work).length === 0}
             />
           ))}
         </div>

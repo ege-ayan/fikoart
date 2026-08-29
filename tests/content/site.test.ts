@@ -14,6 +14,7 @@ describe("site", () => {
       "https://www.linkedin.com/in/fiko-insel-b1483926b/",
     );
     expect(site.socials.website).toBe("https://fikoart.com");
+    expect(site.mark).toBe("fikoa.rt");
   });
 
   it("ships the portrait and CV", () => {

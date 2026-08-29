@@ -6,7 +6,8 @@ import type { Locale } from "@/content/works";
 
 export const siteOrigin = site.socials.website;
 
-export type AppPath = "/" | "/portfolio" | "/cv" | `/work/${string}`;
+export type AppPath =
+  "/" | "/animation" | "/portfolio" | "/cv" | `/work/${string}`;
 
 export function localizedPath(path: AppPath, locale: string) {
   if (locale === routing.defaultLocale) {

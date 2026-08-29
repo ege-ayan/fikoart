@@ -1,5 +1,6 @@
 export const site = {
   name: "Fikoart",
+  mark: "fikoa.rt",
   fullName: "Fikret Insel",
   email: "fikret.insell@gmail.com",
   location: {

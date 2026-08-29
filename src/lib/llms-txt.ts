@@ -19,9 +19,11 @@ The site is available in English (default, no URL prefix) and Turkish (\`/tr\`).
 ## Pages
 
 - [About](${absoluteUrl("/")}): Biography, skills, software, and contact
+- [Animation](${absoluteUrl("/animation")}): 2D animation reel and films
 - [Portfolio](${absoluteUrl("/portfolio")}): Selected animation and illustration
 - [CV](${absoluteUrl("/cv")}): Productions, experience, education, and exhibitions
 - [About (TR)](${absoluteUrl("/tr")})
+- [Animation (TR)](${absoluteUrl("/tr/animation")})
 - [Portfolio (TR)](${absoluteUrl("/tr/portfolio")})
 - [CV (TR)](${absoluteUrl("/tr/cv")})
 

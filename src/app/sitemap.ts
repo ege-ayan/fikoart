@@ -4,7 +4,12 @@ import { works } from "@/content/works";
 import { routing } from "@/i18n/routing";
 import { absoluteUrl, localizedPath, type AppPath } from "@/lib/seo";
 
-const staticPaths = ["/", "/portfolio", "/cv"] as const satisfies AppPath[];
+const staticPaths = [
+  "/",
+  "/animation",
+  "/portfolio",
+  "/cv",
+] as const satisfies AppPath[];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

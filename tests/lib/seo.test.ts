@@ -13,6 +13,8 @@ describe("seo", () => {
   it("prefixes only non-default locales", () => {
     expect(localizedPath("/", "en")).toBe("/");
     expect(localizedPath("/", "tr")).toBe("/tr");
+    expect(localizedPath("/animation", "en")).toBe("/animation");
+    expect(localizedPath("/animation", "tr")).toBe("/tr/animation");
     expect(localizedPath("/portfolio", "en")).toBe("/portfolio");
     expect(localizedPath("/portfolio", "tr")).toBe("/tr/portfolio");
     expect(localizedPath("/work/bubbles", "tr")).toBe("/tr/work/bubbles");
@@ -50,6 +52,8 @@ describe("seo", () => {
 
     expect(urls).toContain("https://fikoart.com");
     expect(urls).toContain("https://fikoart.com/tr");
+    expect(urls).toContain("https://fikoart.com/animation");
+    expect(urls).toContain("https://fikoart.com/tr/animation");
     expect(urls).toContain("https://fikoart.com/portfolio");
     expect(urls).toContain("https://fikoart.com/tr/cv");
     expect(urls).toContain(`https://fikoart.com/work/${works[0]!.slug}`);

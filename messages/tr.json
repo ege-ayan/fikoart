@@ -2,13 +2,15 @@
   "Meta": {
     "homeTitle": "Fikoart — 2D Animasyon ve İllüstrasyon",
     "portfolioTitle": "Portfolyo",
+    "animationTitle": "Animasyon",
     "cvTitle": "CV",
     "description": "Ankara doğumlu 2D animatör ve illüstratör Fikret Insel — portfolyo, CV ve seçilmiş işler.",
     "portfolioDescription": "Fikret Insel'in seçilmiş 2D animasyon, illüstrasyon, resim ve çizimleri.",
+    "animationDescription": "Fikret Insel'in seçilmiş 2D animasyonları: reel, kısa filmler ve komisyonlar.",
     "cvDescription": "Fikret Insel CV: yapımlar, deneyim, eğitim ve sergiler."
   },
   "Nav": {
-    "about": "Hakkında",
+    "animation": "Animasyon",
     "portfolio": "Portfolyo",
     "cv": "CV",
     "openMenu": "Menüyü aç",
