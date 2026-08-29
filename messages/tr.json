@@ -1,5 +1,42 @@
 {
-  "HomePage": {
-    "title": "Merhaba dünya!"
+  "Meta": {
+    "homeTitle": "Fikoart — 2D Animasyon ve İllüstrasyon",
+    "portfolioTitle": "Portfolyo",
+    "cvTitle": "CV",
+    "description": "Ankara doğumlu 2D animatör ve illüstratör Fikret Insel — portfolyo, CV ve seçilmiş işler.",
+    "portfolioDescription": "Fikret Insel'in seçilmiş 2D animasyon, illüstrasyon, resim ve çizimleri.",
+    "cvDescription": "Fikret Insel CV: yapımlar, deneyim, eğitim ve sergiler."
+  },
+  "Nav": {
+    "about": "Hakkında",
+    "portfolio": "Portfolyo",
+    "cv": "CV",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat"
+  },
+  "Footer": {
+    "backToTop": "Yukarı dön",
+    "rights": "© {year} {name}. Tüm hakları saklıdır"
+  },
+  "Work": {
+    "back": "Geri"
+  },
+  "Resume": {
+    "about": "Hakkında",
+    "aboutP1": "Fiko, Ankara doğumlu bir 2D animatör ve illüstratör. Minnesota ile Türkiye arasında yaşayan Fiko, bir gün kendi animasyon stüdyosunu yönetmeyi hedefliyor. Almanya'da UWC Robert Bosch College'da okuduktan sonra 2020'de Minnesota'ya taşındı ve St. Olaf College'da Stüdyo Sanatı lisansını tamamladı. Şu an MCAD'de yüksek lisans yapıyor.",
+    "aboutP2": "2D animasyonu büyük ölçüde kendi kendine öğrendi; natürmort ve figür çizimi, kömür, yağlıboya ve akrilik resim ile heykel ve enstalasyon üzerine formal eğitim de aldı. Profesyonel deneyimi pazarlama, grafik tasarım, galeri işleri ve eğitimi kapsıyor.",
+    "aboutP3": "Çok kültürlü ve politik olarak yüklü ortamların şekillendirdiği işleri; felsefe, politika, din ve etik temalarını kimi zaman doğrudan, kimi zaman alegoriyle ele alarak daha adil gelecekleri oyunlu bir dille görselleştiriyor. Sanatın hem bir protesto aracı hem de topluluk ve empati kurma yolu olduğuna inanıyor.",
+    "pdf": "Özgeçmiş PDF",
+    "view": "Görüntüle",
+    "skills": "Yetenekler",
+    "software": "Yazılımlar",
+    "productions": "Yapımlar",
+    "experience": "Deneyim",
+    "education": "Eğitim",
+    "exhibitions": "Seçilmiş sergiler",
+    "kind": "Tür",
+    "year": "Yıl",
+    "role": "Rol",
+    "company": "Kurum"
   }
 }

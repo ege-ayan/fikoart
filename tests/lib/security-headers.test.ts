@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
   getSecurityHeaderConfig,
+  httpsOnlySecurityHeaders,
   productionSecurityHeaders,
 } from "@/lib/security-headers";
 
@@ -16,11 +17,9 @@ describe("productionSecurityHeaders", () => {
     expect(keys).toEqual([...new Set(keys)]);
   });
 
-  it("enforces HTTPS with HSTS preload", () => {
-    expect(header("Strict-Transport-Security")).toEqual({
-      key: "Strict-Transport-Security",
-      value: "max-age=31536000; includeSubDomains; preload",
-    });
+  it("does not pin HTTPS on every host", () => {
+    expect(header("Strict-Transport-Security")).toBeUndefined();
+    expect(header("Content-Security-Policy")).toBeUndefined();
   });
 
   it("blocks XSS filtering fallback and clickjacking", () => {
@@ -50,12 +49,20 @@ describe("productionSecurityHeaders", () => {
       "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
     );
   });
+});
 
-  it("upgrades insecure requests via CSP", () => {
-    expect(header("Content-Security-Policy")).toEqual({
-      key: "Content-Security-Policy",
-      value: "upgrade-insecure-requests",
-    });
+describe("httpsOnlySecurityHeaders", () => {
+  it("enforces HTTPS only when the request is already TLS", () => {
+    expect(httpsOnlySecurityHeaders).toEqual([
+      {
+        key: "Strict-Transport-Security",
+        value: "max-age=31536000; includeSubDomains; preload",
+      },
+      {
+        key: "Content-Security-Policy",
+        value: "upgrade-insecure-requests",
+      },
+    ]);
   });
 });
 
@@ -70,13 +77,18 @@ describe("getSecurityHeaderConfig", () => {
     expect(getSecurityHeaderConfig()).toEqual([]);
   });
 
-  it("applies security headers to every route in production", () => {
+  it("applies HTTPS headers only behind a TLS terminator", () => {
     vi.stubEnv("NODE_ENV", "production");
 
     expect(getSecurityHeaderConfig()).toEqual([
       {
         source: "/(.*)",
         headers: productionSecurityHeaders,
+      },
+      {
+        source: "/(.*)",
+        has: [{ type: "header", key: "x-forwarded-proto", value: "https" }],
+        headers: httpsOnlySecurityHeaders,
       },
     ]);
   });

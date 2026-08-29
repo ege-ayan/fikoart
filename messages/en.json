@@ -1,5 +1,42 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
+  "Meta": {
+    "homeTitle": "Fikoart — 2D Animation & Illustration",
+    "portfolioTitle": "Portfolio",
+    "cvTitle": "CV",
+    "description": "Fikret Insel is a 2D animator and illustrator from Ankara, Türkiye — portfolio, CV, and selected works.",
+    "portfolioDescription": "Selected 2D animation, illustration, painting, and drawing by Fikret Insel.",
+    "cvDescription": "CV of Fikret Insel: productions, experience, education, and exhibitions."
+  },
+  "Nav": {
+    "about": "About",
+    "portfolio": "Portfolio",
+    "cv": "CV",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "backToTop": "Back to top",
+    "rights": "© {year} {name}. All rights reserved"
+  },
+  "Work": {
+    "back": "Back"
+  },
+  "Resume": {
+    "about": "About",
+    "aboutP1": "Fiko is a 2D animator and illustrator from Ankara, Türkiye, based between Minnesota and Türkiye, aspiring to one day direct his own animation studio. He studied at UWC Robert Bosch College in Germany before moving to Minnesota in 2020 to earn his B.A. in Studio Art at St. Olaf College. He is now pursuing his M.F.A. at MCAD.",
+    "aboutP2": "Primarily self-taught in 2D animation, Fiko also has formal training in still-life and figure drawing, as well as charcoal, oil and acrylic painting, and some sculpture and installation. His professional experience includes marketing, graphic design, gallery work, and education.",
+    "aboutP3": "Shaped by multicultural and politically charged environments, his work explores themes of philosophy, politics, religion, and ethics—sometimes directly, sometimes through allegory—to visualize more equitable futures, through a playful lens. He believes art is both a powerful tool of protest and a way to build community and empathy.",
+    "pdf": "Resume PDF",
+    "view": "View",
+    "skills": "Skills",
+    "software": "Software proficiency",
+    "productions": "Productions",
+    "experience": "Experience",
+    "education": "Education",
+    "exhibitions": "Selected exhibitions",
+    "kind": "Type",
+    "year": "Year",
+    "role": "Role",
+    "company": "Company"
   }
 }

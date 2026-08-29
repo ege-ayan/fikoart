@@ -6,5 +6,6 @@ describe("routing", () => {
   it("supports en and tr with English as default", () => {
     expect(routing.locales).toEqual(["en", "tr"]);
     expect(routing.defaultLocale).toBe("en");
+    expect(routing.localeDetection).toBe(false);
   });
 });
