@@ -21,6 +21,15 @@
   "Work": {
     "back": "Geri"
   },
+  "Errors": {
+    "notFoundTitle": "Sayfa bulunamadı",
+    "notFoundDescription": "Bu adres yok ya da iş taşınmış olabilir.",
+    "errorTitle": "Bir şeyler ters gitti",
+    "errorDescription": "Beklenmeyen bir hata oluştu. Yeniden deneyebilir veya ana sayfaya dönebilirsiniz.",
+    "home": "Hakkında sayfasına dön",
+    "portfolio": "Portfolyoyu gör",
+    "retry": "Yeniden dene"
+  },
   "Resume": {
     "about": "Hakkında",
     "aboutP1": "Fiko, Ankara doğumlu bir 2D animatör ve illüstratör. Minnesota ile Türkiye arasında yaşayan Fiko, bir gün kendi animasyon stüdyosunu yönetmeyi hedefliyor. Almanya'da UWC Robert Bosch College'da okuduktan sonra 2020'de Minnesota'ya taşındı ve St. Olaf College'da Stüdyo Sanatı lisansını tamamladı. Şu an MCAD'de yüksek lisans yapıyor.",

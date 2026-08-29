@@ -21,6 +21,15 @@
   "Work": {
     "back": "Back"
   },
+  "Errors": {
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "This address does not exist, or the work has been moved.",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "An unexpected error occurred. You can try again or return to the homepage.",
+    "home": "Back to about",
+    "portfolio": "View portfolio",
+    "retry": "Try again"
+  },
   "Resume": {
     "about": "About",
     "aboutP1": "Fiko is a 2D animator and illustrator from Ankara, Türkiye, based between Minnesota and Türkiye, aspiring to one day direct his own animation studio. He studied at UWC Robert Bosch College in Germany before moving to Minnesota in 2020 to earn his B.A. in Studio Art at St. Olaf College. He is now pursuing his M.F.A. at MCAD.",
