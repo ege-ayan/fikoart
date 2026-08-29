@@ -38,7 +38,7 @@ export function ImageReadyGate({
     <div className="relative">
       <div className={ready ? undefined : "invisible"}>{children}</div>
       {ready ? null : (
-        <div className="absolute inset-0 z-10 flex min-h-[calc(100dvh-73px)] items-center justify-center bg-canvas">
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-canvas">
           <PageLoader />
         </div>
       )}

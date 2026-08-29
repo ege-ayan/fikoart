@@ -12,5 +12,6 @@ describe("ImageReadyGate", () => {
     );
 
     expect(screen.getByText("ready")).toBeInTheDocument();
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
   });
 });
