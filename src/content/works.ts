@@ -37,6 +37,7 @@ export const works: Work[] = [
         poster: "/videos/reel/poster.jpg",
         width: 1920,
         height: 1080,
+        loop: true,
       },
     ],
     title: {
@@ -56,16 +57,11 @@ export const works: Work[] = [
     slug: "bubbles",
     category: "animation",
     year: "2025",
-    cover: "/works/bubbles.jpeg",
-    images: ["/works/bubbles.jpeg", "/works/bubble-merge.gif"],
-    videos: [
-      {
-        src: "/videos/bubbles/bubbles.mp4",
-        poster: "/videos/bubbles/poster.jpg",
-        width: 1080,
-        height: 1080,
-        loop: true,
-      },
+    cover: "/works/bubbles.gif",
+    images: [
+      "/works/bubbles.gif",
+      "/works/bubbles.jpeg",
+      "/works/bubble-merge.gif",
     ],
     title: {
       en: "Comes and Goes (Bubbles)",
@@ -84,28 +80,13 @@ export const works: Work[] = [
     slug: "beesider",
     category: "animation",
     year: "2023–2024",
-    cover: "/works/beesider-milana.gif",
+    cover: "/works/beesider.gif",
     images: [
+      "/works/beesider.gif",
+      "/works/milana.gif",
       "/works/beesider-milana.gif",
       "/works/beesider-intro.gif",
       "/works/beesider-starnose.gif",
-    ],
-    videos: [
-      {
-        src: "/videos/beesider/beesider.mp4",
-        poster: "/videos/beesider/poster.jpg",
-        width: 1620,
-        height: 1080,
-        loop: true,
-      },
-      {
-        src: "/videos/beesider/milana.mp4",
-        poster: "/videos/beesider/milana-poster.jpg",
-        width: 1920,
-        height: 1072,
-        loop: true,
-        label: { en: "Milana", tr: "Milana" },
-      },
     ],
     title: {
       en: "Beesider",
@@ -124,23 +105,11 @@ export const works: Work[] = [
     slug: "strike",
     category: "animation",
     year: "2023–2024",
-    cover: "/works/strike-cover.jpeg",
-    images: ["/works/strike-cover.jpeg"],
-    videos: [
-      {
-        src: "/videos/strike/strike-1.mp4",
-        poster: "/videos/strike/strike-1-poster.jpg",
-        width: 1920,
-        height: 1080,
-        muted: true,
-      },
-      {
-        src: "/videos/strike/strike-2.mp4",
-        poster: "/videos/strike/strike-2-poster.jpg",
-        width: 1920,
-        height: 1080,
-        muted: true,
-      },
+    cover: "/works/strike-1.gif",
+    images: [
+      "/works/strike-1.gif",
+      "/works/strike-2.gif",
+      "/works/strike-cover.jpeg",
     ],
     title: {
       en: "Strike!",
@@ -159,16 +128,8 @@ export const works: Work[] = [
     slug: "obsa",
     category: "animation",
     year: "2024",
-    cover: "/works/obsa.jpeg",
-    images: ["/works/obsa.jpeg"],
-    videos: [
-      {
-        src: "/videos/obsa/obsa.mp4",
-        poster: "/videos/obsa/poster.jpg",
-        width: 1920,
-        height: 1080,
-      },
-    ],
+    cover: "/works/obsa.gif",
+    images: ["/works/obsa.gif", "/works/obsa.jpeg"],
     title: {
       en: "Obsa",
       tr: "Obsa",
@@ -186,16 +147,11 @@ export const works: Work[] = [
     slug: "blob",
     category: "animation",
     year: "2023",
-    cover: "/works/blob.gif",
-    images: ["/works/blob.gif", "/works/blob-rotoscope.gif"],
-    videos: [
-      {
-        src: "/videos/blob/blob.mp4",
-        poster: "/videos/blob/poster.jpg",
-        width: 1920,
-        height: 1080,
-        loop: true,
-      },
+    cover: "/works/blob-loop.gif",
+    images: [
+      "/works/blob-loop.gif",
+      "/works/blob.gif",
+      "/works/blob-rotoscope.gif",
     ],
     title: {
       en: "Blob",

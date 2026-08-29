@@ -20,7 +20,7 @@ describe("MediaVideo", () => {
     expect(video.tagName).toBe("VIDEO");
     expect(video).toHaveAttribute("preload", "auto");
     expect(video).toHaveAttribute("autoplay");
-    expect(video).toHaveAttribute("controls");
+    expect(video).not.toHaveAttribute("controls");
     expect(video.querySelector("source")).toHaveAttribute(
       "src",
       "/videos/reel/reel.mp4",

@@ -26,7 +26,7 @@ export function MediaVideo({
   className?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
-  const showControls = controls ?? !loop;
+  const showControls = controls ?? false;
 
   useEffect(() => {
     const el = ref.current;

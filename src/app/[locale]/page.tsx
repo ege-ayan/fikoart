@@ -3,7 +3,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { ImageReadyGate } from "@/components/image-ready-gate";
 import { MediaImage } from "@/components/media-image";
 import { SocialLinks } from "@/components/social-icons";
-import { skills, software } from "@/content/resume";
+import { SoftwareStack } from "@/components/software-stack";
+import { skills } from "@/content/resume";
 import { site } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
@@ -46,10 +47,7 @@ export default async function Home() {
           </h1>
           <p className="mt-2 text-sm text-muted">{site.role[locale]}</p>
           <p className="mt-3 text-sm text-muted">{site.location[locale]}</p>
-          <a
-            href={`mailto:${site.email}`}
-            className="mt-2 text-sm hover:underline"
-          >
+          <a href={`mailto:${site.email}`} className="mt-2 text-sm">
             {site.email}
           </a>
           <SocialLinks className="mt-5 justify-center" />
@@ -80,16 +78,7 @@ export default async function Home() {
 
         <section className="mt-12">
           <h2 className="mb-4 text-xl font-medium">{t("software")}</h2>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {software.map((name) => (
-              <div
-                key={name}
-                className="border border-line bg-surface px-3 py-3 text-[13px]"
-              >
-                {name}
-              </div>
-            ))}
-          </div>
+          <SoftwareStack />
         </section>
       </div>
     </ImageReadyGate>

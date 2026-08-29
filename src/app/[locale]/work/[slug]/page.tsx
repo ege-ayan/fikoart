@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ImageReadyGate } from "@/components/image-ready-gate";
-import { MediaImage } from "@/components/media-image";
-import { WorkVideos } from "@/components/work-videos";
+import { WorkMedia } from "@/components/work-media";
 import { getWork, workPosterSrcs, works } from "@/content/works";
 import { pageMetadata } from "@/lib/seo";
 
@@ -63,18 +62,7 @@ export default async function WorkPage({
             {work.description[locale]}
           </p>
         </header>
-        <div className="space-y-2">
-          <WorkVideos work={work} locale={locale} priorityFirst />
-          {work.images.map((src, index) => (
-            <MediaImage
-              key={src}
-              src={src}
-              alt={work.title[locale]}
-              sizes="(max-width: 896px) 100vw, 896px"
-              priority={index === 0 && workPosterSrcs(work).length === 0}
-            />
-          ))}
-        </div>
+        <WorkMedia work={work} locale={locale} priorityFirst />
       </article>
     </ImageReadyGate>
   );

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { JsonLd } from "@/components/json-ld";
-import { WorkVideos } from "@/components/work-videos";
+import { WorkMedia } from "@/components/work-media";
 import { getWorksByCategory } from "@/content/works";
 import { Link } from "@/i18n/navigation";
 import { absoluteUrl, localizedPath, pageMetadata } from "@/lib/seo";
@@ -57,13 +57,7 @@ export default async function AnimationPage() {
               {work.title[locale]}
             </Link>
           </h2>
-          <div className="space-y-2">
-            <WorkVideos
-              work={work}
-              locale={locale}
-              priorityFirst={index === 0}
-            />
-          </div>
+          <WorkMedia work={work} locale={locale} priorityFirst={index === 0} />
         </section>
       ))}
     </>

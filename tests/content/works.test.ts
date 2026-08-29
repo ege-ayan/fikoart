@@ -39,15 +39,15 @@ describe("works", () => {
     }
   });
 
-  it("includes the homepage animation videos", () => {
+  it("keeps only the animation reel as video", () => {
     expect(workVideos(getWork("reel")!).map((video) => video.src)).toEqual([
       "/videos/reel/reel.mp4",
     ]);
-    expect(workVideos(getWork("bubbles")!).length).toBe(1);
-    expect(workVideos(getWork("beesider")!).length).toBe(2);
-    expect(workVideos(getWork("strike")!).length).toBe(2);
-    expect(workVideos(getWork("obsa")!).length).toBe(1);
-    expect(workVideos(getWork("blob")!).length).toBe(1);
+    expect(workVideos(getWork("bubbles")!)).toEqual([]);
+    expect(workVideos(getWork("beesider")!)).toEqual([]);
+    expect(workVideos(getWork("strike")!)).toEqual([]);
+    expect(workVideos(getWork("obsa")!)).toEqual([]);
+    expect(workVideos(getWork("blob")!)).toEqual([]);
   });
 
   it("splits animation and illustration catalogs", () => {
