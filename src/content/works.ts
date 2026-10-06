@@ -1,6 +1,7 @@
 export type Locale = "en" | "tr";
 export type Localized = Record<Locale, string>;
 export type WorkCategory = "animation" | "illustration";
+export type WorkImageLayout = "stack" | "grid-2";
 
 export type WorkVideo = {
   src: string;
@@ -20,6 +21,7 @@ export type Work = {
   cover: string;
   images: string[];
   videos?: WorkVideo[];
+  imageLayout?: WorkImageLayout;
   title: Localized;
   subtitle: Localized;
   description: Localized;
@@ -65,6 +67,7 @@ export const works: Work[] = [
       "/works/bubbles.jpeg",
       "/works/bubble-merge.gif",
     ],
+    imageLayout: "grid-2",
     title: {
       en: "Comes and Goes (Bubbles)",
       tr: "Comes and Goes (Bubbles)",
@@ -90,6 +93,7 @@ export const works: Work[] = [
       "/works/beesider-intro.gif",
       "/works/beesider-starnose.gif",
     ],
+    imageLayout: "grid-2",
     title: {
       en: "Beesider",
       tr: "Beesider",
@@ -113,6 +117,7 @@ export const works: Work[] = [
       "/works/strike-2.gif",
       "/works/strike-cover.jpeg",
     ],
+    imageLayout: "grid-2",
     title: {
       en: "Strike!",
       tr: "Strike!",
@@ -155,6 +160,7 @@ export const works: Work[] = [
       "/works/blob.gif",
       "/works/blob-rotoscope.gif",
     ],
+    imageLayout: "grid-2",
     title: {
       en: "Blob",
       tr: "Blob",
@@ -178,6 +184,7 @@ export const works: Work[] = [
       "/works/bedroom-dark.png",
       "/works/bedroom-light.png",
     ],
+    imageLayout: "grid-2",
     title: {
       en: "Bally",
       tr: "Bally",
