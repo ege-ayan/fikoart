@@ -25,6 +25,7 @@ export default async function AnimationPage() {
   const t = await getTranslations("Meta");
   const locale = (await getLocale()) === "tr" ? "tr" : "en";
   const animationWorks = getWorksByCategory("animation");
+  const [reel, ...otherWorks] = animationWorks;
 
   return (
     <>
@@ -44,11 +45,23 @@ export default async function AnimationPage() {
         }}
       />
       <h1 className="sr-only">{t("animationTitle")}</h1>
-      {animationWorks.map((work, index) => (
-        <section
-          key={work.slug}
-          className={`mx-auto max-w-4xl px-5 ${index === 0 ? "pt-10 pb-6" : "py-8"}`}
-        >
+      {reel ? (
+        <section className="border-b border-line bg-surface/40">
+          <div className="mx-auto max-w-5xl px-5 pt-10 pb-12">
+            <header className="mx-auto mb-8 max-w-2xl text-center">
+              <h2 className="text-3xl font-medium tracking-tight">
+                {reel.title[locale]}
+              </h2>
+              <p className="mt-4 text-[15px] leading-7 text-muted">
+                {reel.description[locale]}
+              </p>
+            </header>
+            <WorkMedia work={reel} locale={locale} priorityFirst />
+          </div>
+        </section>
+      ) : null}
+      {otherWorks.map((work) => (
+        <section key={work.slug} className="mx-auto max-w-4xl px-5 py-8">
           <p className="text-[12px] tracking-[0.16em] uppercase text-muted">
             {work.subtitle[locale]} · {work.year}
           </p>
@@ -57,7 +70,7 @@ export default async function AnimationPage() {
               {work.title[locale]}
             </Link>
           </h2>
-          <WorkMedia work={work} locale={locale} priorityFirst={index === 0} />
+          <WorkMedia work={work} locale={locale} />
         </section>
       ))}
     </>

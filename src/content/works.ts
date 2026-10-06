@@ -9,6 +9,7 @@ export type WorkVideo = {
   height: number;
   loop?: boolean;
   muted?: boolean;
+  controls?: boolean;
   label?: Localized;
 };
 
@@ -28,7 +29,7 @@ export const works: Work[] = [
   {
     slug: "reel",
     category: "animation",
-    year: "2025",
+    year: "2026",
     cover: "/videos/reel/poster.jpg",
     images: [],
     videos: [
@@ -37,12 +38,13 @@ export const works: Work[] = [
         poster: "/videos/reel/poster.jpg",
         width: 1920,
         height: 1080,
-        loop: true,
+        controls: true,
+        muted: false,
       },
     ],
     title: {
-      en: "2025 Animation Reel",
-      tr: "2025 Animasyon Reeli",
+      en: "2026 Animation Reel",
+      tr: "2026 Animasyon Reeli",
     },
     subtitle: {
       en: "Selected animation",

@@ -37,6 +37,7 @@ export function WorkVideos({
               label={label}
               loop={video.loop}
               muted={video.muted}
+              controls={video.controls}
               priority={priorityFirst && index === 0}
             />
           </figure>

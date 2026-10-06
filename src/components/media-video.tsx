@@ -27,6 +27,7 @@ export function MediaVideo({
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const showControls = controls ?? false;
+  const autoPlay = !showControls;
 
   useEffect(() => {
     const el = ref.current;
@@ -36,6 +37,10 @@ export function MediaVideo({
 
     el.muted = muted;
     el.defaultMuted = muted;
+
+    if (showControls) {
+      return;
+    }
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (motion.matches) {
@@ -66,7 +71,7 @@ export function MediaVideo({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [muted, src]);
+  }, [muted, showControls, src]);
 
   return (
     <video
@@ -76,7 +81,7 @@ export function MediaVideo({
       width={width}
       height={height}
       poster={poster}
-      autoPlay
+      autoPlay={autoPlay}
       controls={showControls}
       muted={muted}
       loop={loop}

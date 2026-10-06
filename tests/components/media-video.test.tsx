@@ -11,12 +11,12 @@ describe("MediaVideo", () => {
         poster="/videos/reel/poster.jpg"
         width={1920}
         height={1080}
-        label="2025 Animation Reel"
+        label="2026 Animation Reel"
         priority
       />,
     );
 
-    const video = screen.getByLabelText("2025 Animation Reel");
+    const video = screen.getByLabelText("2026 Animation Reel");
     expect(video.tagName).toBe("VIDEO");
     expect(video).toHaveAttribute("preload", "auto");
     expect(video).toHaveAttribute("autoplay");
@@ -45,5 +45,23 @@ describe("MediaVideo", () => {
     expect(video.muted).toBe(true);
     expect(video).not.toHaveAttribute("controls");
     expect(video).toHaveAttribute("preload", "metadata");
+  });
+
+  it("shows native controls and skips autoplay when controls are enabled", () => {
+    render(
+      <MediaVideo
+        src="/videos/reel/reel.mp4"
+        poster="/videos/reel/poster.jpg"
+        width={1920}
+        height={1080}
+        label="Reel with controls"
+        controls
+        priority
+      />,
+    );
+
+    const video = screen.getByLabelText("Reel with controls");
+    expect(video).toHaveAttribute("controls");
+    expect(video).not.toHaveAttribute("autoplay");
   });
 });
