@@ -62,11 +62,7 @@ export const works: Work[] = [
     category: "animation",
     year: "2025",
     cover: "/works/bubbles.gif",
-    images: [
-      "/works/bubbles.gif",
-      "/works/bubbles.jpeg",
-      "/works/bubble-merge.gif",
-    ],
+    images: ["/works/bubbles.gif", "/works/bubbles.jpeg"],
     imageLayout: "grid-2",
     title: {
       en: "Comes and Goes (Bubbles)",
@@ -90,8 +86,6 @@ export const works: Work[] = [
       "/works/beesider.gif",
       "/works/milana.gif",
       "/works/beesider-milana.gif",
-      "/works/beesider-intro.gif",
-      "/works/beesider-starnose.gif",
     ],
     imageLayout: "grid-2",
     title: {
@@ -136,7 +130,7 @@ export const works: Work[] = [
     category: "animation",
     year: "2024",
     cover: "/works/obsa.gif",
-    images: ["/works/obsa.gif", "/works/obsa.jpeg"],
+    images: ["/works/obsa.gif"],
     title: {
       en: "Obsa",
       tr: "Obsa",
@@ -155,11 +149,7 @@ export const works: Work[] = [
     category: "animation",
     year: "2023",
     cover: "/works/blob-loop.gif",
-    images: [
-      "/works/blob-loop.gif",
-      "/works/blob.gif",
-      "/works/blob-rotoscope.gif",
-    ],
+    images: ["/works/blob-loop.gif", "/works/bubble-merge.gif"],
     imageLayout: "grid-2",
     title: {
       en: "Blob",
@@ -170,8 +160,8 @@ export const works: Work[] = [
       tr: "Rotoskop ve straight-ahead",
     },
     description: {
-      en: "Traced performance (rotoscope) studies and straight-ahead bubble merging animation.",
-      tr: "Performans takibi (rotoskop) çalışmaları ve straight-ahead balon birleşme animasyonu.",
+      en: "Rotoscope studies and a straight-ahead blob-merge animation.",
+      tr: "Rotoskop çalışmaları ve straight-ahead blob birleşme animasyonu.",
     },
   },
   {
@@ -180,6 +170,10 @@ export const works: Work[] = [
     year: "2023–2024",
     cover: "/works/bally-character-sheet.jpg",
     images: [
+      "/works/beesider-intro.gif",
+      "/works/beesider-starnose.gif",
+      "/works/blob-rotoscope.gif",
+      "/works/blob.gif",
       "/works/bally-character-sheet.jpg",
       "/works/bedroom-dark.png",
       "/works/bedroom-light.png",
